@@ -7,12 +7,14 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class PnumaticsSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
-  private DoubleSolenoid test = new DoubleSolenoid(PneumaticsModuleType.CTREPCM,4,5);
+  private static DoubleSolenoid test = new DoubleSolenoid(PneumaticsModuleType.CTREPCM,4,5);
   public PnumaticsSubsystem() {}
-  public void extend()
+  public static void extend()
   {
     test.set(DoubleSolenoid.Value.kForward);
   }
@@ -23,8 +25,11 @@ public class PnumaticsSubsystem extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    System.out.println("fwd:"+test.getFwdChannel()+"   rev:"+test.getRevChannel()+"   isFwdDisabled:"+test.isFwdSolenoidDisabled()+"   isRevDisabled:"+test.isRevSolenoidDisabled());
-
+    System.out.println("fwd:"+test.getFwdChannel()+"   rev:"+test.getRevChannel()+"   isFwdDisabled:"+test.isFwdSolenoidDisabled()+"   isRevDisabled:"+test.isRevSolenoidDisabled()+"   val:"+test.get());
+    SmartDashboard.putNumber("FWD:",test.getFwdChannel());
+    SmartDashboard.putNumber("REV:",test.getRevChannel());
+    SmartDashboard.putBoolean("FWD Disabled:",test.isFwdSolenoidDisabled());
+    SmartDashboard.putBoolean("REV Disabled:",test.isRevSolenoidDisabled());
 
 
   }
@@ -33,4 +38,5 @@ public class PnumaticsSubsystem extends SubsystemBase {
   public void simulationPeriodic() {
     // This method will be called once per scheduler run during simulation
   }
+  
 }
