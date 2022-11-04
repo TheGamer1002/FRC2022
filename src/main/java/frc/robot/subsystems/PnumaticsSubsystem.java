@@ -23,6 +23,10 @@ public class PnumaticsSubsystem extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    System.out.println("fwd:"+test.getFwdChannel()+"   rev:"+test.getRevChannel()+"   isFwdDisabled:"+test.isFwdSolenoidDisabled()+"   isRevDisabled:"+test.isRevSolenoidDisabled());
+
+
+
   }
 
   @Override
