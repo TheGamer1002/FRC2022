@@ -37,7 +37,8 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    new JoystickButton(driver,XboxController.Button.kB.value).whileHeld(m_autoCommand);
+    new JoystickButton(driver,XboxController.Button.kB.value).whenPressed(PnumaticsCommand.extend(), false);
+    new JoystickButton(driver,XboxController.Button.kB.value).whenReleased(PnumaticsCommand.retract());
     
   }
 

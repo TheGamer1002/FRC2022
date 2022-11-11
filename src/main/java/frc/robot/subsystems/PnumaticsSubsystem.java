@@ -12,20 +12,25 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class PnumaticsSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
+
+  // Below is the solenoid call.
   private static DoubleSolenoid test = new DoubleSolenoid(PneumaticsModuleType.CTREPCM,4,5);
   public PnumaticsSubsystem() {}
   public static void extend()
   {
     test.set(DoubleSolenoid.Value.kForward);
   }
-  public void retract()
+  public static void retract()
   {
     test.set(DoubleSolenoid.Value.kReverse);
+  }
+  public static void disable() {
+    test.set(DoubleSolenoid.Value.kOff);
   }
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    System.out.println("fwd:"+test.getFwdChannel()+"   rev:"+test.getRevChannel()+"   isFwdDisabled:"+test.isFwdSolenoidDisabled()+"   isRevDisabled:"+test.isRevSolenoidDisabled()+"   val:"+test.get());
+    
     SmartDashboard.putNumber("FWD:",test.getFwdChannel());
     SmartDashboard.putNumber("REV:",test.getRevChannel());
     SmartDashboard.putBoolean("FWD Disabled:",test.isFwdSolenoidDisabled());
