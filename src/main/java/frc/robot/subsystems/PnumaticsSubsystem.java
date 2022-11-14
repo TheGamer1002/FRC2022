@@ -31,8 +31,6 @@ public class PnumaticsSubsystem extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
     
-    SmartDashboard.putNumber("FWD:",test.getFwdChannel());
-    SmartDashboard.putNumber("REV:",test.getRevChannel());
     SmartDashboard.putBoolean("FWD Disabled:",test.isFwdSolenoidDisabled());
     SmartDashboard.putBoolean("REV Disabled:",test.isRevSolenoidDisabled());
 
