@@ -1,0 +1,76 @@
+- uses: burrunan/gradle-cache-action@v1
+  name: Build with cache
+  # Extra environment variables for Gradle execution (regular GitHub Actions feature)
+  #env:
+  #  VARIABLE: VALUE
+  with:
+    # If you have multiple jobs, use distinct job-id in in case you want to split caches
+    # For instance, jobs with different JDK versions can't share caches
+    # RUNNER_OS is added to job-id automatically
+    # job-id: jdk8
+
+    # Overrides $HOME
+    # home-directory: /home/user
+
+    # Disable caching of $HOME/.gradle/caches/*.*/generated-gradle-jars
+    # save-generated-gradle-jars: false
+
+    # Disable remote cache that proxies requests to GitHub Actions cache
+    # remote-build-cache-proxy-enabled: false
+
+    # Set the cache key for Gradle version (e.g. in case multiple jobs use different versions)
+    # By default the value is `wrapper`, so the version is determined from the gradle-wrapper.properties   
+    # Note: this argument specifies the version for Gradle execution (if `arguments` is present)
+    # Supported values:
+    #   wrapper (default), current, rc, nightly, release-nightly, or
+    #   versions like 6.6 (see https://services.gradle.org/versions/all)
+    gradle-version: wrapper
+
+    # Makes all non-main branch builds to use read-only caching
+    # read-only: ${{ github.ref != 'refs/heads/main' }}
+
+    # Arguments for Gradle execution
+    arguments: build 
+
+    # Properties are passed as -Pname=value
+    #properties: |
+    #  kotlin.js.compiler=ir
+    #  kotlin.parallel.tasks.in.project=true
+
+    # Relative path under $GITHUB_WORKSPACE where Git repository is placed
+    # build-root-directory: sub/directory
+
+    # Activates only the caches that are relevant for executing gradle command.
+    # This is helpful when build job executes multiple gradle commands sequentially.
+    # Then the caching is implemented in the very first one, and the subsequent should be marked
+    # with execution-only-caches: true
+    # execution-only-caches: true
+
+    # Disable caching of ~/.gradle/caches/build-cache-*
+    save-local-build-cache: true
+
+    # Disable caching of ~/.gradle/caches/modules-*
+    save-gradle-dependencies-cache: true
+
+    # Extra files to take into account for ~/.gradle/caches dependencies
+    #gradle-dependencies-cache-key: |
+    #  gradle/dependencies.kt
+    #  buildSrc/**/Version.kt
+
+    # Disable caching of ~/.m2/repository/
+    #save-maven-dependencies-cache: false
+
+    # Ignore some of the paths when caching Maven Local repository
+    #maven-local-ignore-paths: |
+    #  org/example/
+    #  com/example/
+
+    # Enable concurrent cache save and restore
+    # Default is concurrent=false for better log readability
+    # concurrent: true
+
+    # Disable publishing Gradle Build Scan URL to job report
+    gradle-build-scan-report: true
+
+    # Disable warning about missing distributionSha256Sum property in gradle-wrapper.properties
+    gradle-distribution-sha-256-sum-warning: false
