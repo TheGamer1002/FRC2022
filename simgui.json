@@ -1,0 +1,45 @@
+{
+  "HALProvider": {
+    "Other Devices": {
+      "Compressor[0]": {
+        "header": {
+          "open": true
+        }
+      }
+    },
+    "Solenoids": {
+      "0": {
+        "header": {
+          "open": true
+        }
+      },
+      "window": {
+        "visible": true
+      }
+    }
+  },
+  "NTProvider": {
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/LiveWindow/Ungrouped/Scheduler": "Scheduler",
+      "/SmartDashboard/Auto Mode": "String Chooser",
+      "/SmartDashboard/Autonomous Command": "Command",
+      "/SmartDashboard/Extend 1": "Command",
+      "/SmartDashboard/Extend 2": "Command",
+      "/SmartDashboard/Off: all": "Command",
+      "/SmartDashboard/Pneumatics": "Subsystem",
+      "/SmartDashboard/Retract 1": "Command",
+      "/SmartDashboard/Retract 2": "Command",
+      "/SmartDashboard/Xbox Button 1": "Command",
+      "/SmartDashboard/Xbox Button 2": "Command",
+      "/SmartDashboard/Xbox Button 3": "Command"
+    }
+  },
+  "NetworkTables": {
+    "SmartDashboard": {
+      "Extend 1": {
+        "open": true
+      }
+    }
+  }
+}
