@@ -49,6 +49,7 @@ public class MecanumDriver extends CommandBase {
     // Called when the command is initially scheduled.
     @Override
     public void initialize() {
+        // Nothing here, we wait for input instead of immediately doing something.
     }
 
     // Called every time the scheduler runs while the command is scheduled.
