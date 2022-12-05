@@ -35,13 +35,6 @@ jobs:
 
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
     # the publishing section of your build.gradle
-    - name: Publish to GitHub Packages
-      uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
-      with:
-        arguments: publish
-      env:
-        USERNAME: TheGamer1002
-        TOKEN: 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
         
     - name: Create commit comment
       uses: peter-evans/commit-comment@v2
