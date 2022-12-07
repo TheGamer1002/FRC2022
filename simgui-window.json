@@ -6,24 +6,24 @@
       "style": "0",
       "userScale": "2",
       "width": "1600",
-      "xpos": "224",
-      "ypos": "106"
+      "xpos": "-8",
+      "ypos": "203"
     }
   },
   "Window": {
     "###FMS": {
       "Collapsed": "0",
-      "Pos": "6,675",
-      "Size": "202,214"
+      "Pos": "2,705",
+      "Size": "336,164"
     },
     "###Joysticks": {
       "Collapsed": "0",
-      "Pos": "312,581",
-      "Size": "976,232"
+      "Pos": "36,655",
+      "Size": "976,278"
     },
     "###NetworkTables": {
       "Collapsed": "0",
-      "Pos": "352,140",
+      "Pos": "104,153",
       "Size": "937,386"
     },
     "###Other Devices": {
@@ -50,6 +50,11 @@
       "Collapsed": "0",
       "Pos": "60,60",
       "Size": "400,400"
+    },
+    "Robot State": {
+      "Collapsed": "0",
+      "Pos": "13,32",
+      "Size": "109,114"
     }
   }
 }
