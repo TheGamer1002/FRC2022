@@ -45,16 +45,19 @@ public class AutonomousCommand extends CommandBase {
     // Called when the command is initially scheduled.
     @Override
     public void initialize() {
+        // Autonomous isn't needed for this bot, so initializing calls aren't made.
     }
 
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
+        // Same as above.
     }
 
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
+        // Same as above.
     }
 
     // Returns true when the command should end.
