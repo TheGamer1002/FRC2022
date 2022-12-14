@@ -66,10 +66,12 @@ public class Robot extends TimedRobot {
     */
     @Override
     public void disabledInit() {
+        // Nothing happens when robot enters disabled mode.
     }
 
     @Override
     public void disabledPeriodic() {
+        // Same as above.
     }
 
     /**
@@ -90,6 +92,7 @@ public class Robot extends TimedRobot {
     */
     @Override
     public void autonomousPeriodic() {
+        // No code.
     }
 
     @Override
@@ -108,6 +111,7 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void teleopPeriodic() {
+        // No code.
     }
 
     @Override
@@ -121,6 +125,7 @@ public class Robot extends TimedRobot {
     */
     @Override
     public void testPeriodic() {
+        // No code.
     }
 
 }
