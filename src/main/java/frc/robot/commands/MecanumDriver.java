@@ -60,7 +60,7 @@ public class MecanumDriver extends CommandBase {
             // right X
             -RobotContainer.getInstance().getXboxController1().getRawAxis(4),
             // Left X
-            -RobotContainer.getInstance().getXboxController1().getRawAxis(0),
+            RobotContainer.getInstance().getXboxController1().getRawAxis(0),
             // left Y
             RobotContainer.getInstance().getXboxController1().getRawAxis(1)
         );
