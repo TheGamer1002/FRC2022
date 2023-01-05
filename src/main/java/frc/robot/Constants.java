@@ -11,6 +11,11 @@
 
 package frc.robot;
 
+import java.sql.Array;
+import java.util.List;
+
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
  * constants.  This class should not be used for any other purpose.  All constants should be
@@ -28,5 +33,37 @@ public class Constants {
     *   public static final int kRightMotor2Port = 3; 
     * }
     */ 
+
+    // Drivebase Constants
+    public static final class drivebaseConstants {
+
+        // Motor IDs
+        public static final int leftFrontID = 1;
+        public static final int leftRearID = 2;
+        public static final int rightFrontID = 3;
+        public static final int rightRearID = 4;
+
+        // Motor Inversion
+        public static final boolean leftFrontInvert = false;
+        public static final boolean leftRearInvert = false;
+        public static final boolean rightFrontInvert = true;
+        public static final boolean rightRearInvert = true;
+
+
+        /**
+         * Motor Types
+         * 0 = Brushed motor (e.g. CIM)
+         * 1 = Brushless motor (e.g. NEO)
+         */
+        
+        // Create a list of two motor types, kBrushed and kBrushless. We'll set the types of individual motors to these. This is just to make it easier to change the motor types.
+        public static final List<MotorType> motorTypes = List.of(MotorType.kBrushed, MotorType.kBrushless);
+
+        public static final MotorType leftFrontType = motorTypes.get(1);
+        public static final MotorType leftRearType = motorTypes.get(1);
+        public static final MotorType rightFrontType = motorTypes.get(1);
+        public static final MotorType rightRearType = motorTypes.get(1);
+
+    }
 }
 
