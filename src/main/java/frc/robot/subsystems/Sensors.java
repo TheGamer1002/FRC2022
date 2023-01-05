@@ -51,7 +51,7 @@ try { navXMicro2 = new AHRS(SPI.Port.kMXP);} catch (RuntimeException ex ) {Drive
     @Override
     public void periodic() {
         // This method will be called once per scheduler run
-        
+        /* 
 
         // Rotate the robot 90 degrees counter-clockwise. The robot's speed will be set to 0.5. I want you to take the initial position and angles (y-axis) and the end position and angles and calculate where the center of the rotation is relative to the robot. Then, correct it by setting constants to multiply x, y, and z by. I will use this in a mecanum drive, so calibrate accordingly.
 
@@ -104,6 +104,8 @@ try { navXMicro2 = new AHRS(SPI.Port.kMXP);} catch (RuntimeException ex ) {Drive
         System.out.println("End Angle: " + endAngle);
 
         // This is the center of rotation.
+        */
+
 
     }
 
