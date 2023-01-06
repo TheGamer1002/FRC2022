@@ -56,6 +56,7 @@ public class MecanumDriver extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
+        m_drivebase.drive(0, 0, 0);
         m_drivebase.drive(
             // right X
             -RobotContainer.getInstance().getXboxController1().getRawAxis(4),

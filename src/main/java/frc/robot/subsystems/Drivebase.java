@@ -60,41 +60,41 @@ private MecanumDrive mecanumDrive;
 leftFront = new CANSparkMax(Constants.drivebaseConstants.leftFrontID, Constants.drivebaseConstants.leftFrontType);
  
  leftFront.restoreFactoryDefaults();  
-leftFront.setInverted(false);
-leftFront.setIdleMode(IdleMode.kCoast);
+leftFront.setInverted(Constants.drivebaseConstants.leftFrontInverted);
+leftFront.setIdleMode(Constants.drivebaseConstants.leftFrontIdleMode);
 leftFront.burnFlash();
   
 
 leftRear = new CANSparkMax(Constants.drivebaseConstants.leftRearID, Constants.drivebaseConstants.leftRearType);
  
  leftRear.restoreFactoryDefaults();  
-leftRear.setInverted(false);
-leftRear.setIdleMode(IdleMode.kCoast);
+leftRear.setInverted(Constants.drivebaseConstants.leftRearInverted);
+leftRear.setIdleMode(Constants.drivebaseConstants.leftRearIdleMode);
 leftRear.burnFlash();
   
 
-rightFront = new CANSparkMax(2, MotorType.kBrushed);
+rightFront = new CANSparkMax(Constants.drivebaseConstants.rightFrontID, MotorType.kBrushed);
  
  rightFront.restoreFactoryDefaults();  
-rightFront.setInverted(false);
-rightFront.setIdleMode(IdleMode.kCoast);
+rightFront.setInverted(Constants.drivebaseConstants.rightFrontInverted);
+rightFront.setIdleMode(Constants.drivebaseConstants.rightFrontIdleMode);
 rightFront.burnFlash();
   
 
-rightRear = new CANSparkMax(3, MotorType.kBrushed);
+rightRear = new CANSparkMax(Constants.drivebaseConstants.rightRearID, MotorType.kBrushed);
  
  rightRear.restoreFactoryDefaults();  
-rightRear.setInverted(false);
-rightRear.setIdleMode(IdleMode.kCoast);
+rightRear.setInverted(Constants.drivebaseConstants.rightRearInverted);
+rightRear.setIdleMode(Constants.drivebaseConstants.rightRearIdleMode);
 rightRear.burnFlash();
   
 
 mecanumDrive = new MecanumDrive(leftFront, leftRear,
 rightFront, rightRear);
  addChild("Mecanum Drive",mecanumDrive);
- mecanumDrive.setSafetyEnabled(true);
-mecanumDrive.setExpiration(0.1);
-mecanumDrive.setMaxOutput(1.0);
+ mecanumDrive.setSafetyEnabled(Constants.drivebaseConstants.mecanumDriveSafetyEnabled);
+mecanumDrive.setExpiration(Constants.drivebaseConstants.mecanumDriveExpiration);
+mecanumDrive.setMaxOutput(Constants.drivebaseConstants.mecanumDriveMaxOutput);
 
 
 
@@ -108,11 +108,7 @@ mecanumDrive.setMaxOutput(1.0);
     public void periodic() {
         // This method will be called once per scheduler run
 
-        // Below, I've added some commands to send data to Shuffleboard.
-        leftFrontEntry.setDouble(leftFront.get());
-        leftRearEntry.setDouble(leftRear.get());
-        rightFrontEntry.setDouble(rightFront.get());
-        rightRearEntry.setDouble(rightRear.get());
+
 
     }
 
@@ -143,13 +139,13 @@ mecanumDrive.setMaxOutput(1.0);
     
 
     // Add a Shuffleboard tab.
-    private ShuffleboardTab tab = Shuffleboard.getTab("Mecanum Drivebase");
+    /*private ShuffleboardTab tab = Shuffleboard.getTab("Mecanum Drivebase");
     NetworkTableEntry leftFrontEntry = tab.add("Left Front", 0).getEntry();
     NetworkTableEntry leftRearEntry = tab.add("Left Rear", 0).getEntry();
     NetworkTableEntry rightFrontEntry = tab.add("Right Front", 0).getEntry();
     NetworkTableEntry rightRearEntry = tab.add("Right Rear", 0).getEntry();
 
-
+*/
     // Set default command for the subsystem to schedule the execution of MecanumDriver.
     
     

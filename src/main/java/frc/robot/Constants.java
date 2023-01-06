@@ -11,9 +11,9 @@
 
 package frc.robot;
 
-import java.sql.Array;
 import java.util.List;
 
+import com.revrobotics.CANSparkMax.IdleMode;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 /**
@@ -63,6 +63,29 @@ public class Constants {
         public static final MotorType leftRearType = motorTypes.get(1);
         public static final MotorType rightFrontType = motorTypes.get(1);
         public static final MotorType rightRearType = motorTypes.get(1);
+
+        // Idle Modes
+        public static final List<IdleMode> idleModes = List.of(IdleMode.kCoast, IdleMode.kBrake);
+
+        public static final IdleMode leftFrontIdleMode = idleModes.get(0);
+        public static final IdleMode leftRearIdleMode = idleModes.get(0);
+        public static final IdleMode rightFrontIdleMode = idleModes.get(0);
+        public static final IdleMode rightRearIdleMode = idleModes.get(0);
+
+        // Motor Inversion
+        public static final boolean leftFrontInverted = false;
+        public static final boolean leftRearInverted = false;
+        public static final boolean rightFrontInverted = true;
+        public static final boolean rightRearInverted = true;
+
+        // Drivebase Max Output
+        public static final double mecanumDriveMaxOutput = 0.5;
+
+        // Drivebase Safety !!DO NOT CHANGE!!
+        public static final boolean mecanumDriveSafetyEnabled = true;
+
+        // Drivebase Expiration Time
+        public static final double mecanumDriveExpiration = 0.1;
 
     }
 }
