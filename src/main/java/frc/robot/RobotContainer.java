@@ -84,7 +84,7 @@ private final XboxController xboxController1 = new XboxController(0);
   //  SmartDashboard.putData("Auto Mode", m_chooser);
 
     m_mecanumDriver.initialize();
-
+    m_drivebase.setDefaultCommand(new MecanumDriver(m_drivebase));
 
   }
 
